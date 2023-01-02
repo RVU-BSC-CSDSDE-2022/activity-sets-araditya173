@@ -1,30 +1,39 @@
-#include<stdio.h>
-void main()
-{
-      int n,sum;
-      n=input_n();
-      sum=sum_n_nos(n);
-      output(n,sum);
-      printf("Sum is %d",sum);
+//Write a C program to find the [square root]
+#include <stdio.h>
 
-}
-int input_n()
+float input();
+float square_root(float n);
+void output(float n, float sqrroot);
+
+int main()
 {
-      int n;
-      printf("Enter the value of n\n");
-      scanf("%d",&n);
-      return n;
+  float n,sqrroot;
+  n=input();
+  sqrroot=square_root(n);
+  output(n, sqrroot);
 }
-int sum_n_nos(int n)
+float input()
 {
-      int i,sum=0;
-      for(i=1;i<=n;i++)
-      {
-            sum=sum+i;
-      }
-      return sum;
+  float n;
+  printf("input the number\n");
+  scanf("%f",&n);
+  return n;
+  
 }
-void output(int n,int sum)
+float square_root(float n)
 {
-printf("The sum of %d natural numbers is %d",n,sum);
+  float temp=0,sqrroot;
+  //sqrroot = n/2;
+  while(sqrroot!=temp)
+    {
+      temp=sqrroot;
+      sqrroot=(n/temp+temp)/2;
+      return sqrroot;
+    }
+  
+}
+void output(float n, float sqrroot)
+{
+  printf("The square root of %f is %f\n",n,sqrroot);
+  
 }

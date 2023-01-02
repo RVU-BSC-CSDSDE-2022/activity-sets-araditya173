@@ -25,7 +25,7 @@ void input_two_strings(char *string1, char *string2)
 int stringcompare(char *string1, char *string2)
 {
     int result=0,i=0,flag=0;
-    while(string1[i]!='\0' && string2[i]='\0')
+    while(string1[i]!='\0' && string2[i]!='\0')
       {
           if(string1[i]!=string2[i])
           {
@@ -49,6 +49,12 @@ int stringcompare(char *string1, char *string2)
     if(string1[i]>string2[i])
       return 1;
     else return 2;
+  }
+    if(flag==2)
+  {
+    if(string2[i]>string1[i])
+      return 2;
+    else return 1;
   }
 }
 

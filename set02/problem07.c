@@ -26,7 +26,7 @@ Triangle input_triangle()
   Triangle t;
   printf("enter the base and height\n");
   scanf("%f %f",&t.base,&t.height);
-  return t;./
+  return t;
 }
 void find_area(Triangle *t)
 {
