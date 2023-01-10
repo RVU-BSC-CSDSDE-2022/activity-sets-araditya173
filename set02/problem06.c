@@ -8,9 +8,9 @@ void output(char *a, char *reverse_a);
 
 int main()
 {
-  char a,str,rev_str,reverse_a;
+  char a,str[100],rev_str[100],reverse_a;
  input_string( &a);
- str_reverse( &str,  &rev_str);
+ reverse_a=str_reverse( &str,  &rev_str);
  output( &a,  &reverse_a); 
 }
 void input_string(char *a)
@@ -39,10 +39,6 @@ void str_reverse(char *str, char *rev_str)
         
       
     }
-  char a[100]="";
-  printf("enter a string:%s \n",a);
-  reverseString(a);
-    return 0;
   
   
 }

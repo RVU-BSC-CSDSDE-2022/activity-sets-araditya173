@@ -33,7 +33,7 @@ int find_gcd(int a, int b)
   {
     min=a;
   }
-for (i=1;i<+min;i++)
+for (i=1;i<min;i++)
   {
   if (a%i==0 && b%i==0)
   {

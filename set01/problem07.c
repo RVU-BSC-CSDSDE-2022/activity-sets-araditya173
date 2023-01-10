@@ -1,30 +1,30 @@
 #include<stdio.h>
-void main()
+int input_n();
+int sum_n_nos(int n);
+void output(int n, int sum);
+int main()
 {
-      int n,sum;
-      n=input_n();
-      sum=sum_n_nos(n);
-      output(n,sum);
-      printf("Sum is %d",sum);
-
+int n,sum;
+n=input_n();
+sum=sum_n_nos(n);
+output(n,sum);
+return 0;
 }
 int input_n()
 {
-      int n;
-      printf("Enter the value of n\n");
-      scanf("%d",&n);
-      return n;
+int n;
+printf("Enter ‘n’ for Sigma(n)\n");
+scanf("%d",&n);
+return n;
 }
 int sum_n_nos(int n)
 {
-      int i,sum=0;
-      for(i=1;i<=n;i++)
-      {
-            sum=sum+i;
-      }
-      return sum;
+int sum=0;
+int i;
+for (i=1;i<=n;i++){sum=sum+i;}
+return sum;
 }
-void output(int n,int sum)
+void output(int n, int sum)
 {
-printf("The sum of %d natural numbers is %d",n,sum);
+printf("Sum of all Natural Numbers till %d is %d\n",n,sum);
 }

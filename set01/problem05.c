@@ -1,12 +1,34 @@
-#include <stdio.h>
+#include<stdio.h>
+int input();
+int compare(int a, int b, int c);
+void output(int a, int b, int c, int largest);
+
 int main()
 {
-  int a=20, b=30, c=40;
-  if (a>c && a>b)
-    printf("a is the largest integer");
-  else if (b>c && b>a)
-    printf("b is the largest integer ");
-  else if (c>a && c>b)
-    printf("c is the largest integer");
-  return 0;
+int a,b,c,largest;
+a=input();
+b=input();
+c=input();
+largest=compare(a,b,c);
+output(a,b,c,largest);
+return 0;
+}
+int input()
+{
+int n;
+printf("Enter the Number\n");
+scanf("%d",&n);
+return n;
+}
+int compare(int a, int b, int c)
+{
+int largest;
+if ((a>=b)&&(a>=c)){largest=a;}
+else if ((b>=a) && (b>=c)){largest=b;}
+else if ((c>=a) && (c>=b)){largest=c;}
+return largest;
+}
+void output(int a, int b, int c, int largest)
+{
+printf("The largest of %d, %d and %d is %d\n",a,b,c,largest);
 }

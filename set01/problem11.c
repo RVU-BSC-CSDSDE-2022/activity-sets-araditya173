@@ -1,43 +1,36 @@
-//Write a C program to find the sum of 2 complex numbers
-#include <stdio.h>
-
-struct _complex {
+#include<stdio.h>
+struct complex {
 	float real;
 	float imaginary;
-}
-typedef struct _complex Complex;
-
+};
+typedef struct complex Complex;
 Complex input_complex();
 Complex add_complex(Complex a, Complex b);
 void output(Complex a, Complex b, Complex sum);
-
 int main()
 {
-  Complex a,b,sum=0;
-  a=input_complex();
-  b=input_complex();
-  sum=add_complex(a,b);
-  output(a, b, sum);
-    return 0;
+Complex a,b,sum;
+a=input_complex();
+b=input_complex();
+sum=add_complex(a,b);
+output(a,b,sum);
+return 0;
 }
-input_complex()
+Complex input_complex()
 {
-  Complex n;
-  printf("input the real part\n");
-  scanf("%d",&n.real);
-  printf("input the imaginary part\n");
-  scanf("%d",&n.imaginary);
-  return n;
+Complex c;
+printf("Enter the Real Part and Imaginary Part of the Complex Number\n");
+scanf("%f%f",&c.real,&c.imaginary);
+return c;
 }
-add_complex(Complex a, Complex b)
+Complex add_complex(Complex a, Complex b)
 {
- Complex sum=0;
-  sum.real=a.real+b.real;
-  sum.imaginary=a.imaginary+b.imaginary;
-  return sum;
+Complex add;
+add.real = a.real + b.real;
+add.imaginary = a.imaginary + b.imaginary;
+return add;
 }
-output(Complex a, Complex b, Complex sum)
+void output(Complex a, Complex b, Complex sum)
 {
- printf("Therefore the complex number is %f + i%f",sum.real,sum.imaginary); 
-  
+printf("The sum of %.1f+%.1fi and %.1f+%.1fi is %.1f+%.1fi\n",a.real,a.imaginary,b.real,b.imaginary,sum.real,sum.imaginary);
 }
