@@ -8,41 +8,34 @@ void output(char *a, char *reverse_a);
 
 int main()
 {
-  char a,str[100],rev_str[100],reverse_a;
- input_string( &a);
- reverse_a=str_reverse( &str,  &rev_str);
- output( &a,  &reverse_a); 
+ char str[100],rev_str[100];
+ input_string(str);
+ str_reverse( str,  rev_str);
+ output(str,  rev_str);
+  return 0;
 }
 void input_string(char *a)
 {
   printf("enter a\n");
-  scanf("%s",&a);
+  scanf("%s",a);
 }
 void str_reverse(char *str, char *rev_str)
 {
-  int l,i,ch;
-  char a;
-  l=strlen(a);
-  str=l;
-  rev_str=l;
-  for (i=0;i<l-1;i++)
+  int begin,end,count=0;
+  while (str[count] != '\0')
     {
-    rev_str++;
+      count++;
+        end=count-1;
     }
-  for (i=0;i<l/2;i++)
+  for (begin = 0; begin < count; begin++)
     {
-      ch=rev_str;
-      rev_str=str;
-        str=ch;
-      str++;
-        rev_str--;
-        
-      
+     rev_str[end]=str[begin];
+    end--;
+    
     }
-  
-  
+    rev_str[begin]='\0';
 }
 void output(char *a, char *reverse_a)
 {
-  
+  printf("the reverse of %s is %s", a, reverse_a);
 }

@@ -8,39 +8,33 @@ void output(int a, int b, int gcd);
 
 int main()
 {
-  int a,b,gcd;
-input();
+int a,b,gcd;
+a=input();
+b=input();
 gcd=find_gcd( a,  b);
 output( a,  b,  gcd);
+return 0;
 }
 int input()
 {
-  int a,b;
+  int a;
   printf("enter a\n");
   scanf("%d",&a);
-  printf("enter b\n");
-  scanf("%d",&b);
+  return a;
+
   
 }
 int find_gcd(int a, int b)
 { 
-  int i,gcd,min;
-  if (a>b)
-  {
-    min=b;
+int i,gcd=0;
+  for (i=1;i<=a && i<=b;i++)
+    {
+    if( a%i==0 && b%i==0)
+    {
+      gcd=i;
     }
-  else 
-  {
-    min=a;
-  }
-for (i=1;i<min;i++)
-  {
-  if (a%i==0 && b%i==0)
-  {
-    gcd=i;
-  }
-  }
-return gcd;
+    }
+  return gcd;
   
 }
 void output(int a, int b, int gcd)
